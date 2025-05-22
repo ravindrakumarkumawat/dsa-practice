@@ -60,7 +60,7 @@ stack.pop();
 console.log("\nAfter popping out");
 stack.printStack();
 
-
+// To reverse a word - Put all the letters in a stack and pop them out. Because of the LIFO order of stack, you will get the letters in reverse order.
 
 
 
