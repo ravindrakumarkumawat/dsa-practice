@@ -6,11 +6,13 @@
 class Graph {
   constructor(vertices) {
     this.V = vertices;
-    this.adjList = new Array(vertices);
+    // this.adjList = new Array(vertices);
 
-    for (let i = 0; i < vertices; i++) {
-      this.adjList[i] = [];
-    }
+    // for (let i = 0; i < vertices; i++) {
+    //   this.adjList[i] = [];
+    // }
+
+    this.adjList = Array.from({ length: vertices }, () => []);
   }
 
   // Add edge (undirected graph)
