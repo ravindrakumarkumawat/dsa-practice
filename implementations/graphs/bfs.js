@@ -1,3 +1,27 @@
+function bfs(graph, startNode) {
+  const visited = new Set();      // Track visited nodes
+  const queue = [startNode];      // Initialize queue with starting node
+  const result = [];              // Store BFS traversal order
+
+  while (queue.length > 0) {
+    const current = queue.shift(); // Dequeue the front node
+
+    if (!visited.has(current)) {
+      visited.add(current);       // Mark node as visited
+      result.push(current);       // Push to result
+
+      const neighbors = graph[current] || [];
+      for (const neighbor of neighbors) {
+        if (!visited.has(neighbor)) {
+          queue.push(neighbor);   
+        }
+      }
+    }
+  }
+
+  return result;
+}
+
 /**
  * Graph implementation using an adjacency list.
  * This implementation supports adding edges and performing a Breadth First Search (BFS).
@@ -61,3 +85,4 @@ g.BFS(2);
  * Cycle detection in an undirected graph
  * In minimum spanning tree
  */
+
