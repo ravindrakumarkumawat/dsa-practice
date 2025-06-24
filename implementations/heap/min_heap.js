@@ -1,4 +1,4 @@
-// Min heap implementation in JavaScript
+// Map heap implementation in JavaScript
 class MinHeap {
   constructor() {
     this.heap = [];

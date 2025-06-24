@@ -5,7 +5,7 @@
 
 class Graph {
   constructor(vertices) {
-    this.V = vertices;
+    // this.V = vertices;
     // this.adjList = new Array(vertices);
 
     // for (let i = 0; i < vertices; i++) {
