@@ -1,4 +1,4 @@
-Array.prototype.myFilter = function (cb, args) {
+elArray.prototype.myFilter = function (cb, args) {
   const filtered = []
   
   for(let i = 0; i < this.length; i++) {
