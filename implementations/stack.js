@@ -1,9 +1,131 @@
+// 1. Array-based solution
+export default class Stack {
+  constructor() {
+    this._items = [];
+  }
+
+  /**
+   * Pushes an item onto the top of the stack.
+   * @param {*} item The item to be pushed onto the stack.
+   * @return {number} The new length of the stack.
+   */
+  push(item) {
+    return this._items.push(item);
+  }
+
+  /**
+   * Remove an item at the top of the stack.
+   * @return {*} The item at the top of the stack if it is not empty, `undefined` otherwise.
+   */
+  pop() {
+    return this._items.pop();
+  }
+
+  /**
+   * Determines if the stack is empty.
+   * @return {boolean} `true` if the stack has no items, `false` otherwise.
+   */
+  isEmpty() {
+    return this.length() === 0;
+  }
+
+  /**
+   * Returns the item at the top of the stack without removing it from the stack.
+   * @return {*} The item at the top of the stack if it is not empty, `undefined` otherwise.
+   */
+  peek() {
+    return this.isEmpty() ? undefined : this._items[this.length() - 1];
+  }
+
+  /**
+   * Returns the number of items in the stack.
+   * @return {number} The number of items in the stack.
+   */
+  length() {
+    return this._items.length;
+  }
+}
+
+// 2. Linked list-based solution
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.prev = null;
+  }
+}
+
+export class Stack {
+  constructor() {
+    this._top = null;
+    this._length = 0;
+  }
+
+  /**
+   * Pushes an item onto the top of the stack.
+   * @param {*} item The item to be pushed onto the stack.
+   * @return {number} The new length of the stack.
+   */
+  push(item) {
+    const node = new Node(item);
+    node.prev = this._top;
+    this._top = node;
+    this._length++;
+    return this._length;
+  }
+
+  /**
+   * Remove an item at the top of the stack.
+   * @return {*} The item at the top of the stack if it is not empty, `undefined` otherwise.
+   */
+  pop() {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+
+    const node = this._top;
+    this._top = node.prev;
+    node.prev = null;
+    this._length--;
+    return node.value;
+  }
+
+  /**
+   * Determines if the stack is empty.
+   * @return {boolean} `true` if the stack has no items, `false` otherwise.
+   */
+  isEmpty() {
+    return this._length === 0;
+  }
+
+  /**
+   * Returns the item at the top of the stack without removing it from the stack.
+   * @return {*} The item at the top of the stack if it is not empty, `undefined` otherwise.
+   */
+  peek() {
+    return this.isEmpty() ? undefined : this._top.value;
+  }
+
+  /**
+   * Returns the number of items in the stack.
+   * @return {number} The number of items in the stack.
+   */
+  length() {
+    return this._length;
+  }
+}
+
+
+
+
+
+
+
 // Applications of Stack Data Structure
 // To reverse a word - Put all the letters in a stack and pop them out. Because of the LIFO order of stack, you will get the letters in reverse order.
 // In compilers - Compilers use the stack to calculate the value of expressions like 2 + 4 / 5 * (7 - 9) by converting the expression to prefix or postfix form.
 // In browsers - The back button in a browser saves all the URLs you have visited previously in a stack. Each time you visit a new page, it is added on top of the stack. When you press the back button, the current URL is removed from the stack, and the previous URL is accessed.
 
-class Stack {
+class StackImplementation {
   constructor(size) {
     this.arr = new Array(size);
     this.capacity = size;
@@ -54,7 +176,7 @@ class Stack {
 }
 
 // Usage example
-const stack = new Stack(5);
+const stack = new StackImplementation(5);
 
 stack.push(1);
 stack.push(2);
