@@ -18,7 +18,30 @@ export default function squashObject(obj) {
   return out
 }
 
+const input = {
+  a: { b: { c: 10 } }
+};
+console.log(squashObject(input));
+// output: { "a.b.c": 10 }
 
+const complex = {
+  user: {
+    name: "Ravi",
+    skills: ["JS", "React"],
+    address: {
+      city: "Bengaluru",
+      codes: [560001, 560002]
+    }
+  }
+};
+
+console.log(squashObject(complex));
+// output: {
+//   "user.name": "Ravi",
+//   "user.skills": ["JS", "React"],
+//   "user.address.city": "Bengaluru",
+//   "user.address.codes": [560001, 560002]
+// }
 
 
 /////////// Alternative solution
