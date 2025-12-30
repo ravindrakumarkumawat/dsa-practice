@@ -1,0 +1,50 @@
+.App {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2px;
+}
+
+.App-header {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.App-component {
+  margin: 8px;
+  padding: 8px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(68, 210, 231, 0.1);
+}
+
+button {
+  margin: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input {
+  margin: 4px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+}

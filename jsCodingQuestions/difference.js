@@ -13,3 +13,10 @@ export default function difference(array, values) {
 
   return result;
 }
+
+// Example usage:
+const arr = [1, 2, , 4, 5, undefined];
+const vals = [2, 5, undefined];
+const diff = difference(arr, vals);
+console.log(diff); // Output: [1, 4]
+

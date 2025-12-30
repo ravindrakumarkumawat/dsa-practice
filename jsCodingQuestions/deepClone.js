@@ -3,7 +3,7 @@
 // }
 
 export default function deepClone(value) {
-  if (value === null || typeof valye !== object) {
+  if (value === null || typeof value !== object) {
     return value;
   }
 
