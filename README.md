@@ -1,4 +1,4 @@
-# dsa-practice
+# FE Interview Practice (DSA, LLD, HLD, JS Concepts, React Concepts, Components)
 https://www.programiz.com/dsa/queue
 
 #### JavaScript Coding Questions
