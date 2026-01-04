@@ -1,4 +1,4 @@
-import { ClickAnywhere, CounterMemozied, Cycle, EffectOnce, FocusInput, PreviousState } from './components/examples';
+import { ClickAnywhere, CounterMemozied, Cycle, EffectOnce, FocusInput, PreviousState, StateWithReset } from './components/examples';
 import './App.css';
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
       <EffectOnce />
       <FocusInput />
       <PreviousState />
+      <StateWithReset />
     </div>
   );
 }
