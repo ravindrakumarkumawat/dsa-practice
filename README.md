@@ -4,11 +4,10 @@ https://www.programiz.com/dsa/queue
 #### JavaScript Coding Questions
 https://bigfrontend.dev/problem
 
-### Patterns
-https://www.patterns.dev/vanilla/observer-pattern/
+[50-must-know-javascript-interview-questions-by-ex-interviewers](https://www.greatfrontend.com/blog/50-must-know-javascript-interview-questions-by-ex-interviewers)
 
-### Js questions - 
-https://www.greatfrontend.com/blog/50-must-know-javascript-interview-questions-by-ex-interviewers
+[Javascript code challenges](https://jscodechallenges.vercel.app/challenges/functions#11-design-a-function-with-cycle-functionality-for-given-list-of-inputs-where-cycle-function-accepts-list-of-values-to-be-cycled-upon)
 
+[Patterns](https://www.patterns.dev/vanilla/observer-pattern/)
 
-[Radio Framework](https://gist.github.com/ravindrakumarkumawat/a49feb0b6e1747506ba0c5076d82e5c9)
+## Quick notes
