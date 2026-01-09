@@ -10,4 +10,6 @@ https://bigfrontend.dev/problem
 
 [Patterns](https://www.patterns.dev/vanilla/observer-pattern/)
 
+[Practical exercises](https://frontendeval.com/)
+
 ## Quick notes
