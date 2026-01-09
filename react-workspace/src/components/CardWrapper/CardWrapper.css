@@ -1,18 +1,13 @@
 .CardWrapper-component {
   margin: 8px;
   padding: 8px;
-  border: 1px solid var(--secondary-color);
+  border-left: 8px solid var(--secondary-color);
   border-radius: 8px;
   background-color: var(--background-color);
   color: var(--text-color);
-  box-shadow: 0 2px 4px rgba(68, 210, 231, 0.1);
+  box-shadow: 0 4px 8px rgba(125, 127, 128, 0.1);
 }
 
 .CardWrapper-component-name {
-  color: #fff;
   font-weight: bold;
-}
-
-.CardWrapper-component-description {
-  color: #fff;
 }
