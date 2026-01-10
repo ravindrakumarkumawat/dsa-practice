@@ -8,21 +8,52 @@ export default function binaryTreeEqual(
   a: TreeNode | null,
   b: TreeNode | null,
 ): boolean {
-  // Check if both a and b are null
   if (a == null && b == null) {
     return true;
   }
 
-  // If one of a or b is null (but not both), the trees are not the same
   if (b == null || a == null) {
     return false;
   }
 
-  // If the values of the current nodes are different, the trees are not the same
   if (a.val != b.val) {
     return false;
   }
 
-  // Recursively check if the right subtrees are the same and if the left subtrees are the same
   return binaryTreeEqual(a.right, b.right) && binaryTreeEqual(a.left, b.left);
+}
+
+export function binaryTreeEqualQueue(
+  a: TreeNode | null,
+  b: TreeNode | null,
+): boolean {
+  function check(a: TreeNode | null, b: TreeNode | null) {
+    if (a === null && b === null) {
+      return true;
+    }
+    if (a === null || b === null) {
+      return false;
+    }
+    if (a.val !== b.val) {
+      return false;
+    }
+    return true;
+  }
+
+  const queue: [TreeNode | null, TreeNode | null][] = [[a, b]];
+
+  while (queue.length) {
+    [a, b] = queue.shift() as [TreeNode | null, TreeNode | null];
+
+    if (!check(a, b)) {
+      return false;
+    }
+
+    if (a) {
+      queue.push([a.left, b?.left] as [TreeNode | null, TreeNode | null]);
+      queue.push([a.right, b?.right] as [TreeNode | null, TreeNode | null]);
+    }
+  }
+
+  return true;
 }
