@@ -1,8 +1,4 @@
 export class BinaryTreeNode {
-  /**
-   * Initialize a Binary Tree node.
-   * @param {*} value The value of the node.
-   */
   constructor(value) {
     this.value = value;
     this.left = null;
@@ -16,7 +12,7 @@ export class BinaryTree {
    * @param {*} value The value of the root node.
    */
   constructor(value) {
-    this.root = value === null ? null : new BinaryTreeNode(value)
+    this.root = value == null ? null : new BinaryTreeNode(value);
   }
 
   /**
@@ -38,13 +34,13 @@ export class BinaryTree {
    * @return {number} The height of the tree.
    */
   height() {
-    const helper = (node) => {
-      if(!node) return -1
-
-      return 1 + Math.max(helper(node.left), helper(node.right))
-    }
-
-    return this.root ? helper(this.root) : 0
+    const heightHelper = (node) => {
+      if (!node) {
+        return -1;
+      }
+      return 1 + Math.max(heightHelper(node.left), heightHelper(node.right));
+    };
+    return this.root ? heightHelper(this.root) : 0;
   }
 
   /**
@@ -111,23 +107,24 @@ export class BinaryTree {
    */
   isBalanced() {
     const isBalancedHelper = (node) => {
-      if(!node) return 0
+      if (!node) {
+        return 0;
+      }
 
-      const leftHeight = isBalancedHelper(node.left)
-      const rightHeight = isBalancedHelper(node.right)
+      const leftHeight = isBalancedHelper(node.left);
+      const rightHeight = isBalancedHelper(node.right);
 
-      if(
+      if (
         leftHeight === -1 ||
         rightHeight === -1 ||
         Math.abs(leftHeight - rightHeight) > 1
       ) {
-        return -1
+        return -1;
       }
 
-      return 1 + Math.max(leftHeight, rightHeight)
-    }
-
-    return isBalancedHelper(this.root) !== -1
+      return 1 + Math.max(leftHeight, rightHeight);
+    };
+    return isBalancedHelper(this.root) !== -1;
   }
 
   /**
@@ -136,25 +133,25 @@ export class BinaryTree {
    * @return {boolean} True if the binary tree is complete, false otherwise.
    */
   isComplete() {
-    if(!this.root) return true
+    if (!this.root) return true;
 
-    const queue = [this.root] 
+    const queue = [this.root];
     let foundNull = false;
 
-    while(queue.length > 0) {
-      const node = queue.shift()
+    while (queue.length > 0) {
+      const node = queue.shift();
 
-      if(node === null) {
-        foundNull = true
+      if (node === null) {
+        foundNull = true;
       } else {
-        if(foundNull) {
-          return false
+        if (foundNull) {
+          return false; // Found a non-null node after a null one
         }
-        queue.push(node.left)
-        queue.push(node.right)
+        queue.push(node.left);
+        queue.push(node.right);
       }
     }
 
-    return true
+    return true;
   }
 }
